@@ -1,168 +1,164 @@
-export default function MNhatStore() { const products = [ { title: "Cloud Phone VIP", price: "99K/tháng", badge: "HOT", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop" }, { title: "Acc Blox Fruit Max", price: "299K", badge: "NEW", image: "https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop" }, { title: "Script Premium", price: "49K", badge: "VIP", image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop" } ];
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-return ( <div className="min-h-screen bg-[#060816] text-white overflow-hidden"> <div className="fixed inset-0 bg-[radial-gradient(circle_at_top,#3b1d80,transparent_40%)] opacity-70"></div>
+<title>M.NhatStore</title>
 
-<header className="sticky top-0 z-50 backdrop-blur-xl bg-[#090b1acc]/80 border-b border-purple-500/20">
-    <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 shadow-[0_0_30px_rgba(34,211,238,0.6)]"></div>
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#070b1a;
+color:white;
+}
 
-        <div>
-          <h1 className="text-2xl font-black bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">
-            M.NhatStore
-          </h1>
-          <p className="text-xs text-slate-400">
-            Acc • Cloud Phone • Script
-          </p>
-        </div>
-      </div>
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#0d1228;
+position:sticky;
+top:0;
+}
 
-      <div className="flex items-center gap-3">
-        <button className="bg-[#15172c] border border-purple-500/30 px-4 py-2 rounded-2xl text-sm">
-          🌙
-        </button>
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#55dfff;
+}
 
-        <button className="bg-gradient-to-r from-orange-500 to-pink-500 px-5 py-3 rounded-2xl font-bold shadow-[0_0_30px_rgba(236,72,153,0.4)]">
-          💸 Nạp Tiền
-        </button>
+.btn{
+background:linear-gradient(45deg,#00c6ff,#7d5fff);
+padding:12px 25px;
+border:none;
+border-radius:15px;
+color:white;
+font-size:16px;
+}
 
-        <div className="hidden md:flex items-center gap-3 bg-[#15172c] px-4 py-2 rounded-2xl border border-cyan-500/20">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500"></div>
-          <div>
-            <h3 className="font-bold">Nhatdepzai</h3>
-            <p className="text-xs text-green-400">Online</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+.hero{
+padding:50px 20px;
+text-align:center;
+}
 
-  <section className="relative z-10 max-w-7xl mx-auto px-5 py-16">
-    <div className="grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <div className="inline-flex items-center gap-2 bg-purple-500/20 border border-purple-500/30 px-4 py-2 rounded-full text-sm mb-6">
-          🔥 Shop Gaming Chuyên Nghiệp
-        </div>
+.hero h1{
+font-size:45px;
+margin-bottom:20px;
+}
 
-        <h2 className="text-5xl md:text-6xl font-black leading-tight mb-6">
-          Shop Acc & Cloud Phone Hiện Đại
-        </h2>
+.hero p{
+color:#ccc;
+}
 
-        <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-          Mua acc tự động • Nạp tiền nhanh • Cloud phone treo game 24/7.
-        </p>
+.card-area{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:30px;
+}
 
-        <div className="flex flex-wrap gap-4">
-          <button className="bg-gradient-to-r from-cyan-400 to-purple-500 px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_40px_rgba(34,211,238,0.4)] hover:scale-105 transition-all">
-            Mua Ngay
-          </button>
+.card{
+background:#11182f;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(128,0,255,0.3);
+}
 
-          <button className="bg-[#15172c] border border-purple-500/30 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-[#1a1d36] transition-all">
-            Khám Phá
-          </button>
-        </div>
-      </div>
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
 
-      <div className="relative">
-        <div className="absolute inset-0 bg-purple-500 blur-3xl opacity-20 rounded-full"></div>
+.card-content{
+padding:20px;
+}
 
-        <div className="relative bg-[#101325] border border-purple-500/20 rounded-[35px] p-5 shadow-[0_0_50px_rgba(124,58,237,0.2)]">
-          <img
-            src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop"
-            className="rounded-[25px] h-[420px] object-cover w-full"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+.price{
+font-size:28px;
+color:#5ee7ff;
+font-weight:bold;
+}
 
-  <section className="relative z-10 max-w-7xl mx-auto px-5 py-10">
-    <div className="bg-[#101325] border border-purple-500/20 rounded-[35px] p-8 shadow-[0_0_50px_rgba(124,58,237,0.15)]">
-      <div className="flex items-center justify-between mb-10">
-        <div>
-          <h2 className="text-4xl font-black mb-2">Cloud Phone</h2>
-          <p className="text-slate-400">
-            Điện thoại ảo • Treo game ổn định
-          </p>
-        </div>
+.buy{
+margin-top:15px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:15px;
+background:linear-gradient(45deg,#00c6ff,#7d5fff);
+color:white;
+font-size:16px;
+}
 
-        <button className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-2xl font-bold shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-          Khám Phá Ngay →
-        </button>
-      </div>
+.footer{
+text-align:center;
+padding:40px;
+color:#aaa;
+}
+</style>
+</head>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {products.map((item, index) => (
-          <div
-            key={index}
-            className="bg-[#16192d] border border-purple-500/20 rounded-[30px] overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-[0_0_30px_rgba(124,58,237,0.15)]"
-          >
-            <div className="relative">
-              <img
-                src={item.image}
-                className="h-56 w-full object-cover"
-              />
+<body>
 
-              <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-2 rounded-full text-sm font-black text-black">
-                {item.badge}
-              </div>
-            </div>
+<header>
+<div class="logo">M.NhatStore</div>
 
-            <div className="p-6">
-              <h3 className="text-2xl font-black mb-3">
-                {item.title}
-              </h3>
+<button class="btn">💸 Nạp Tiền</button>
+</header>
 
-              <div className="flex items-center justify-between">
-                <div className="text-3xl font-black bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">
-                  {item.price}
-                </div>
+<section class="hero">
+<h1>Shop Acc & Cloud Phone</h1>
 
-                <button className="bg-gradient-to-r from-cyan-400 to-purple-500 px-5 py-3 rounded-2xl font-bold shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:scale-105 transition-all">
-                  Mua
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+<p>Acc Blox Fruit • Cloud Phone • Script Premium</p>
+</section>
 
-  <section className="relative z-10 max-w-7xl mx-auto px-5 py-20">
-    <div className="grid md:grid-cols-3 gap-8">
-      {["Discord Support", "Nạp Tự Động", "Giao Acc Nhanh"].map(
-        (item, index) => (
-          <div
-            key={index}
-            className="bg-[#101325] border border-purple-500/20 rounded-[30px] p-8 shadow-[0_0_30px_rgba(124,58,237,0.15)]"
-          >
-            <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-cyan-400 to-purple-500 mb-6 shadow-[0_0_25px_rgba(34,211,238,0.4)]"></div>
+<section class="card-area">
 
-            <h3 className="text-2xl font-black mb-4">{item}</h3>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
 
-            <p className="text-slate-400 leading-relaxed">
-              Hệ thống hiện đại, giao diện đẹp và hỗ trợ khách hàng 24/7.
-            </p>
-          </div>
-        )
-      )}
-    </div>
-  </section>
+<div class="card-content">
+<h2>Acc Blox Fruit Max</h2>
 
-  <div className="fixed right-5 bottom-6 z-50 flex flex-col gap-4">
-    <button className="w-16 h-16 rounded-full bg-[#5865F2] text-2xl shadow-[0_0_30px_rgba(88,101,242,0.5)]">
-      🎮
-    </button>
+<div class="price">299K</div>
 
-    <button className="w-16 h-16 rounded-full bg-[#00B2FF] text-2xl shadow-[0_0_30px_rgba(0,178,255,0.5)]">
-      💬
-    </button>
-
-    <button className="w-16 h-16 rounded-full bg-[#00D26A] text-2xl shadow-[0_0_30px_rgba(0,210,106,0.5)]">
-      📞
-    </button>
-  </div>
+<button class="buy">Mua Ngay</button>
+</div>
 </div>
 
-); }
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h2>Cloud Phone VIP</h2>
+
+<div class="price">99K</div>
+
+<button class="buy">Thuê Ngay</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h2>Script Premium</h2>
+
+<div class="price">49K</div>
+
+<button class="buy">Mua Ngay</button>
+</div>
+</div>
+
+</section>
+
+<div class="footer">
+© 2026 M.NhatStore
+</div>
+
+</body>
+    </html>
